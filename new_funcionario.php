@@ -49,6 +49,12 @@ $empresas = $select->fetchAll();
                 <?php endforeach; ?>
             </select>
 
+            <label for="salario">Salário:</label>
+            <input type="text" id="salario" name="salario" placeholder="0,00" required>
+
+            <label for="data_cadastro">Data de Cadastro:</label>
+            <input type="date" id="data_cadastro" name="data_cadastro" placeholder="data_cadastro@exemplo.com" required>
+
             <button type="submit">Inserir</button>
         </form>
     </main>]
