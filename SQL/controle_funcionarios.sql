@@ -4,8 +4,8 @@ USE controle_funcionarios;
 
 CREATE TABLE tbl_usuario (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
-    login VARCHAR(20) NOT NULL,
-    senha VARCHAR(20) NOT NULL
+    login VARCHAR(50) NOT NULL,
+    senha VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE tbl_empresa (
@@ -20,7 +20,10 @@ CREATE TABLE tbl_funcionario (
     rg VARCHAR(20) NOT NULL,
     email VARCHAR(30) NOT NULL,
     id_empresa INT NOT NULL,
+    data_cadastro DATE NOT NULL,
+    salario DOUBLE(10,2) NOT NULL,
+    bonificacao DOUBLE(10,2) NOT NULL,
     FOREIGN KEY (id_empresa) REFERENCES tbl_empresa(id_empresa)
 );
 
-INSERT INTO tbl_usuario (login, senha) VALUES ('adm', 'projeto');
+INSERT INTO tbl_usuario (login, senha) VALUES ('teste@gmail.com.br', 'projeto');
