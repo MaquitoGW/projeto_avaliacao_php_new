@@ -5,7 +5,7 @@ USE controle_funcionarios;
 CREATE TABLE tbl_usuario (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     login VARCHAR(50) NOT NULL,
-    senha VARCHAR(30) NOT NULL
+    senha char(32) NOT NULL
 );
 
 CREATE TABLE tbl_empresa (
@@ -26,4 +26,4 @@ CREATE TABLE tbl_funcionario (
     FOREIGN KEY (id_empresa) REFERENCES tbl_empresa(id_empresa)
 );
 
-INSERT INTO tbl_usuario (login, senha) VALUES ('teste@gmail.com.br', 'projeto');
+INSERT INTO tbl_usuario (login, senha) VALUES ('teste@gmail.com.br', '81dc9bdb52d04dc20036dbd8313ed055');
