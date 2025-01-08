@@ -77,3 +77,35 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+
+// Gerar PDF usando a biblioteca jsPDF
+document.getElementById('download').addEventListener('click', function () {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF('landscape');
+
+    // Define o titulo
+    const pageWidth = doc.internal.pageSize.width;
+    const textWidth = doc.getTextWidth('Lista de Funcionários');
+    doc.setFontSize(16);
+    doc.text('Lista de Funcionários', (pageWidth - textWidth) / 2, 20);
+
+    // Remove coluna de opções
+    const table = document.getElementById('table');
+    const rows = table.rows;
+    for (let i = 0; i < rows.length; i++) {
+        rows[i].deleteCell(9);
+    }
+
+    doc.autoTable({
+        html: '#table',
+        startY: 30, // Ajustar o inicio da tabela
+        margin: { left: 5, top: 30, right: 5, bottom: 0 }, // Ajusta as margens
+        styles: {
+            halign: 'center', // Alinha as celulas ao centro
+        }
+    });
+
+    doc.save('tabela_funcionarios.pdf');
+    location.href = "/";
+});
