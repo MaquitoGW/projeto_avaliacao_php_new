@@ -17,7 +17,7 @@ $response = new Response;
         <form action="include/process_login.php" method="POST" class="login">
             <h2>Login</h2>
             <label for="login">Login:</label>
-            <input type="text" id="login" name="login" placeholder="Insira seu usuário" required>
+            <input type="email" id="login" name="login" placeholder="Insira seu usuário" value="<?= isset($_SESSION['login']) ? $_SESSION['login']  : ""; unset($_SESSION['login']); ?>" required>
 
             <label for="senha">Senha:</label>
             <input type="password" id="senha" name="senha" placeholder="*******" required>
