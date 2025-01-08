@@ -38,7 +38,7 @@ main.none-columns {
     grid-template-columns: auto;
 }
 
-section  {
+section {
     background-color: #fff;
     padding: 1.5rem;
     border-radius: 8px;
@@ -75,7 +75,8 @@ h1 {
     color: #333;
 }
 
-form, table {
+form,
+table {
     width: auto;
     padding: 20px;
     background-color: #fff;
@@ -83,7 +84,8 @@ form, table {
     border-radius: 8px;
 }
 
-input, select {
+input,
+select {
     display: block;
     margin: 10px 0;
     width: 100%;
@@ -118,6 +120,7 @@ button:hover {
 button.cancel {
     background-color: #a30000;
 }
+
 button.cancel:hover {
     background-color: #7c0000;
 }
@@ -147,7 +150,6 @@ table td {
     padding: 12px;
     text-align: center;
     border: 1px solid #ddd;
-    cursor: pointer;
 }
 
 table th {
@@ -161,6 +163,21 @@ table tr:nth-child(even) {
 
 table tr:hover {
     background-color: #f1f1f1;
+}
+
+table tr.red {
+    background: red;
+}
+
+table tr.blue {
+    background: blue;
+}
+
+table tr.blue a,
+table tr.red a,
+table tr.blue,
+table tr.red {
+    color: #fff;
 }
 
 #popup {
